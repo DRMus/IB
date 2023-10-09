@@ -19,7 +19,7 @@ const routes = createBrowserRouter([
 function App() {
   return (
     <MainContextProvider>
-      <RouterProvider router={routes} />;
+      <RouterProvider router={routes} />
     </MainContextProvider>
   );
 }

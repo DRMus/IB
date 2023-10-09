@@ -8,14 +8,16 @@ interface Props {
 
 interface Context {
   sequence: number[];
+  writableSequence: number | undefined,
   sequenceChange: (e: ChangeEvent<HTMLInputElement>) => void;
   downloadSequenceFromFile: () => void;
 }
 
 export const MainContextValues = createContext<Context>({
   sequence: [],
-  sequenceChange: () => {},
-  downloadSequenceFromFile: () => {},
+  writableSequence: undefined,
+  sequenceChange: () => { },
+  downloadSequenceFromFile: () => { },
 });
 
 export const MainContextProvider = (props: Props) => {
@@ -33,6 +35,7 @@ export const MainContextProvider = (props: Props) => {
   };
 
   const value: Context = {
+    writableSequence,
     sequence: writableSequence ? generateSequence(writableSequence) : sequence,
     sequenceChange: handleWriteSequence,
     downloadSequenceFromFile,

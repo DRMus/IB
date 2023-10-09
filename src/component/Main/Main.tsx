@@ -44,7 +44,7 @@ const Main = () => {
         </div>
       </Content>
     </Layout>
-  );
+  )
 };
 
 export default Main;

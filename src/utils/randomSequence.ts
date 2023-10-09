@@ -1,5 +1,9 @@
 import { convertSequenceToArray } from "./convertSequenceToArray";
 
+export function getRndInteger(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min) ) + min;
+}
+
 /* Генератор последовательности. Готово. */
 export const generateSequence = (length?: number) => {
   const count = length ?? 10000;
