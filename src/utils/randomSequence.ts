@@ -1,7 +1,7 @@
 import { convertSequenceToArray } from "./convertSequenceToArray";
 
 export function getRndInteger(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min) ) + min;
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
 /* Генератор последовательности. Готово. */
@@ -14,4 +14,10 @@ export const generateSequence = (length?: number) => {
   }
   const sequenceArray: number[] = convertSequenceToArray(sequence);
   return sequenceArray;
+};
+
+export const sequenceToInt = (length?: number) => {
+  const seq = generateSequence(length);
+
+  return BigInt(`0b${seq.join("")}`);
 };
