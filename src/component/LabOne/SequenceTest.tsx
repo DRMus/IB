@@ -23,8 +23,7 @@ export const SequenceTest = () => {
     (2 * Math.sqrt(2 * sequence.length) * frequensy * (1 - frequensy));
 
   return (
-    <Card>
-      <h1>Тест на последовательность одинаковых бит</h1>
+    <Card title="Тест на последовательность одинаковых бит">
       {statistics <= 1.82138636 && (
         <h3
           style={{ color: "green" }}

@@ -71,11 +71,11 @@ export const ExtraTest = () => {
   }, [checkStatistics]);
 
   return (
-    <Card>
-      <h1>Расширенный тест на произвольные отклонения</h1>
+    <Card title="Расширенный тест на произвольные отклонения">
       {currentStatistic.map((value, index) => (
         <p key={index}>
-          <span style={{ fontWeight: "bold" }}>{value.toFixed(8)}</span> {"<="} 1.82138636
+          <span style={{ fontWeight: "bold" }}>{value.toFixed(8)}</span> {"<="}{" "}
+          1.82138636
         </p>
       ))}
       {success ? (

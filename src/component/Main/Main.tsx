@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { Navigate, Outlet, useLocation, useNavigate } from "react-router";
 import { MainContextValues } from "../../contexts/MainContext";
 
-const labLinks = ["lab1", "lab2"];
+const labLinks = ["lab1", "lab2", "lab3"];
 
 const Main = () => {
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ const Main = () => {
       </Header>
       <Content>
         <Input
-          type="text"
+          type="number"
           onChange={sequenceChange}
           addonBefore={"Длина последовательности"}
           placeholder={"Введите длину"}

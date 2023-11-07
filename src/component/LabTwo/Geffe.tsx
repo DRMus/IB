@@ -4,7 +4,6 @@ import { sequenceToInt } from "../../utils/randomSequence";
 import { useContext, useEffect, useState } from "react";
 import { MainContextValues } from "../../contexts/MainContext";
 import Paragraph from "antd/es/typography/Paragraph";
-import Title from "antd/es/typography/Title";
 import TestSequence from "./tests/TestSequence";
 import { convertSequenceToArray } from "../../utils/convertSequenceToArray";
 
@@ -20,12 +19,11 @@ const Geffe = () => {
       writableSequence || 10_000
     );
     setGeffe(gen);
-  }, [writableSequence])
+  }, [writableSequence]);
   return (
-    <Card>
-      <Title level={3}>Генератор Геффе</Title>
+    <Card title="Генератор Геффе">
       <Paragraph>Длина последовательности: {geffe.length}</Paragraph>
-      <TestSequence sequence={convertSequenceToArray(geffe)}/>
+      <TestSequence sequence={convertSequenceToArray(geffe)} />
     </Card>
   );
 };
