@@ -10,7 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/big.js": "^6.2.2",
     "antd": "^5.9.0",
+    "big.js": "^6.2.1",
+    "gl-matrix": "^3.4.3",
+    "mathjs": "^12.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.16.0",

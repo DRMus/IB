@@ -4,13 +4,14 @@ import { useContext } from "react";
 import { Navigate, Outlet, useLocation, useNavigate } from "react-router";
 import { MainContextValues } from "../../contexts/MainContext";
 
-const labLinks = ["lab1", "lab2", "lab3"];
+const labLinks = ["lab1", "lab2", "lab3", "lab4", "lab5"];
 
 const Main = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { sequenceChange, downloadSequenceFromFile } = useContext(MainContextValues);
+  const { sequenceChange, downloadSequenceFromFile } =
+    useContext(MainContextValues);
 
   return (
     <Layout>
@@ -30,21 +31,25 @@ const Main = () => {
         />
       </Header>
       <Content>
-        <Input
-          type="number"
-          onChange={sequenceChange}
-          addonBefore={"Длина последовательности"}
-          placeholder={"Введите длину"}
-        />
-        <Button type="primary" onClick={downloadSequenceFromFile}>
-          Загрузить из файла
-        </Button>
+        {location.pathname !== "/lab3" && location.pathname !== "/lab4" && (
+          <>
+            <Input
+              type="number"
+              onChange={sequenceChange}
+              addonBefore={"Длина последовательности"}
+              placeholder={"Введите длину"}
+            />
+            <Button type="primary" onClick={downloadSequenceFromFile}>
+              Загрузить из файла
+            </Button>
+          </>
+        )}
         <div>
           <Outlet />
         </div>
       </Content>
     </Layout>
-  )
+  );
 };
 
 export default Main;

@@ -36,7 +36,8 @@ export const MainContextProvider = (props: Props) => {
 
   const value: Context = {
     writableSequence,
-    sequence: writableSequence ? generateSequence(writableSequence) : sequence,
+    // sequence: writableSequence ? generateSequence(writableSequence) : sequence,
+    sequence: writableSequence ? [writableSequence] : sequence,
     sequenceChange: handleWriteSequence,
     downloadSequenceFromFile,
   };

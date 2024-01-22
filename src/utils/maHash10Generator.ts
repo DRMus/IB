@@ -34,7 +34,7 @@ export const maHash10Generator = (str: string) => {
   let hash2 = str.length;
 
   for (let i = 0; i < str.length; i++) {
-    const value = sTable[(str.charCodeAt(i) + i) & 255];
+    const value = sTable[str.charCodeAt(i) & 255];
     hash1 = LROT14(hash2 + ((hash2 << 6) ^ (hash2 >> 11)));
     hash1 += value;
     hash2 = RROT14(hash1 + ((hash1 << 6) ^ (hash1 >> 11)));
